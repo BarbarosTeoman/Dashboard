@@ -107,11 +107,10 @@ body {
   border-radius: 10px;
 }
 
-.card img {
+.card embed {
   position: absolute;
-  right: 10px;
+  right: 30px;
   aspect-ratio: 1/1;
-  height: 50px;
 }
 
 .topOfCard svg {
@@ -232,7 +231,7 @@ button:hover {
     grid-gap: 20px;
   }
 
-  .person img {
+  .person embed {
     margin-top: 100px;
     height: 100px;
     width: 100px;

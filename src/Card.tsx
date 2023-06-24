@@ -3,7 +3,7 @@ export default function Card(props: any) {
   return (
     <div className="card">
       <div className="sectionBackground">
-        <img src={`src/assets/icon-${props.title.toLowerCase().split(" ").join("-")}.svg`} alt="" />
+        <embed src={`src/assets/icon-${props.title.toLowerCase().split(" ").join("-")}.svg`}/>
       </div>
       <div className={"cardInformation"}>
         <div className="topOfCard">
