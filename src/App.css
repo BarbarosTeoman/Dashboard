@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --light-red: hsl(15, 100%, 70%);
+  --softBlue: hsl(195, 74%, 62%);
+  --lightRed: hsl(348, 100%, 68%);
+  --limeGreen: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --softOrange: hsl(43, 84%, 65%);
+  --veryDarkBlue: hsl(226, 43%, 10%);
+  --darkBlue: hsl(235, 46%, 20%);
+  --desaturatedBlue: hsl(235, 45%, 61%);
+  --paleBlue: hsl(236, 100%, 87%);
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Rubik;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--veryDarkBlue);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  grid-template-areas: "personCard Work Play Study"
+                       "personCard Exercise Social SelfCare";
+  grid-gap: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+}
+
+.card:nth-child(2) {
+  grid-area: Work;
+}
+
+.card:nth-child(2) .sectionBackground {
+  height: 55px;
+  background-color: var(--light-red);
+  border-radius: 10px;
+}
+
+.card:nth-child(3) {
+  grid-area: Play;
+}
+
+.card:nth-child(3) .sectionBackground {
+  height: 55px;
+  background-color: var(--softBlue);
+  border-radius: 10px;
+}
+
+.card:nth-child(4) {
+  grid-area: Study;
+}
+
+.card:nth-child(4) .sectionBackground {
+  height: 55px;
+  background-color: var(--lightRed);
+  border-radius: 10px;
+}
+
+.card:nth-child(5) {
+  grid-area: Exercise;
+}
+
+.card:nth-child(5) .sectionBackground {
+  height: 55px;
+  background-color: var(--limeGreen);
+  border-radius: 10px;
+}
+
+.card:nth-child(6) {
+  grid-area: Social;
+}
+
+.card:nth-child(6) .sectionBackground {
+  height: 55px;
+  background-color: var(--violet);
+  border-radius: 10px;
+}
+
+.card:nth-child(7) {
+  grid-area: SelfCare;
+}
+
+.card:nth-child(7) .sectionBackground {
+  height: 55px;
+  background-color: var(--softOrange);
+  border-radius: 10px;
+}
+
+.card img {
+  position: absolute;
+  right: 10px;
+  aspect-ratio: 1/1;
+  height: 50px;
+}
+
+.topOfCard svg {
+  cursor: pointer;
+}
+
+.cardInformation {
+  position: absolute;
+  background-color: var(--darkBlue);
+  height: calc(100% - 40px);
+  width: 100%;
+  top: 40px;
+  border-radius: 10px;
+}
+
+.cardInformation:hover {
+  background-color: var(--desaturatedBlue);
+}
+
+.topOfCard {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  align-items: center;
+}
+
+.bottomOfCard {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  color: white;
+  font-weight: 400;
+}
+
+h1 {
+  color: white;
+  margin-left: 20px;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+p {
+  color: var(--paleBlue);
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: smaller;
+  margin-top: 5px;
+}
+
+.sectionBackground {
+  height: 100px;
+}
+
+.personCard {
+  grid-area: personCard;
+  background-color: var(--darkBlue);
+  border-radius: 10px;
+  height: 100%;
+}
+
+.person {
+  background-color: var(--blue);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.person img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin: 20px;
+  border: 2px solid white;
+}
+
+.personInformation p {
+  font-weight: 300;
+}
+
+.personInformation h1 {
+  margin-right: 80px;
+  font-weight: 300;
+}
+
+.timeFrames {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--paleBlue);
+  font-weight: 300;
+  font-size: smaller;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 26px;
+}
+
+button:hover {
+  color: white;
+}
+
+@media screen and (852px <= width < 1020px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas: "personCard Work Play"
+                        "personCard Study Exercise"
+                        "personCard Social SelfCare";
+    grid-gap: 20px;
+  }
+
+  .person img {
+    margin-top: 100px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .person {
+    padding-bottom: 100px;
+  }
+
+  .personInformation p {
+    font-size: 1rem;
+  }
+
+  .personInformation h1 {
+    font-size: 3rem;
+  }
+
+  button {
+  font-size: 1rem;
+  margin-left: 20px;
+  margin-top: 32px;
+}
+}
+
+@media screen and (width < 852px) {
+  .main {
+    height: 100%;
+  }
+  .container {
+    margin: 50px 0;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 150px);
+    grid-template-areas: "personCard"
+                         "Work"
+                         "Play"
+                         "Study"
+                         "Exercise"
+                         "Social"
+                         "SelfCare";
+    grid-gap: 20px;
+  }
+  .bottomOfCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+  .person {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30px 0 0;
+  }
+  .personInformation p {
+    margin: 0;
+  }
+  .personInformation h1 {
+    display: inline;
+    margin: 0 10px 0 0 ;
+    font-size: 1.5rem;
+  }
+  .timeFrames {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 17px 30px 0 30px;
+  }
+  button {
+    margin: 0; 
+  }
+  .topOfCard {
+    margin-bottom: 10px;
+  }
+}
