@@ -30,7 +30,7 @@ function App() {
       <div className="container">
         <div className="personCard">
           <div className="person">
-            <img src="src/assets/image-jeremy.png" alt="photo"/>
+            <img src="public/image-jeremy.png" alt="photo"/>
             <div className="personInformation">
               <p>Report for</p>
               <h1>Jeremy</h1>
